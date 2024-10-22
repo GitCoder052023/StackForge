@@ -1,90 +1,117 @@
-# Contributing to StackForge
+# StackForge 🛠️
 
-First, thank you for considering contributing to this project! Your contributions, whether they're code, bug reports, suggestions, or documentation, are greatly appreciated.
+StackForge is an innovative, open-source CLI tool designed to streamline the process of scaffolding modern web applications. Currently under heavy development, StackForge aims to become your go-to solution for quickly setting up web projects with various technology stacks.
 
-This guide will walk you through the process of contributing to this project.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
-## How Can You Contribute?
+## 🚧 Development Status
 
-1. **Report Bugs**  
-   If you encounter a bug, feel free to open an issue. Please provide enough details, including:
-   - The version you're using
-   - Steps to reproduce the issue
-   - Any related log output
+**Note: StackForge is currently in active development (Alpha Stage)**
 
-2. **Request Features or Enhancements**  
-   Have an idea to improve the project? Create an issue describing your feature request.
+Currently supported technologies:
+- Express.js
+- Tailwind CSS
 
-3. **Submit Code**  
-   We're always looking for improvements to the codebase. Here's how you can help:
-   
-   ### Workflow:
-   1. Fork the repository.
-   2. Clone your forked repository.
-      ```bash
-      git clone https://github.com/GitCoder052023/StackForge.git
-      cd StackForge
-      ```
-   3. Create a new branch:
-      ```bash
-      git checkout -b feature/your-feature-name
-      ```
-   4. Make your changes.
-   5. Test your changes. Ensure everything works as expected.
-   6. Push your changes to your fork:
-      ```bash
-      git push origin feature/your-feature-name
-      ```
-   7. Open a Pull Request (PR) to the `main` branch. Ensure that you describe the changes clearly and reference any related issues.
+Coming soon:
+- Flask
+- Django
+- Bootstrap
+- Vanilla CSS
+- React.js
+- Vue.js
+- And many more!
 
-4. **Improve Documentation**  
-   If you see outdated documentation or anything missing, feel free to submit updates. Good documentation helps other contributors understand the codebase and the project better.
+## ✨ Features
 
-## Guidelines
+- 🎯 Interactive CLI using questionary
+- 📁 Customizable project structure
+- 🎨 Pre-configured Tailwind CSS setup
+- 🚀 Express.js server configuration
+- 📝 Automatic README generation
+- 🔧 Environment variable management
+- 🖥️ Development server with hot reload
 
-1. **Code Style**  
-   - Follow the existing code style for consistency.
-   - Use meaningful variable, function, and class names.
-   - Write comments when necessary to explain complex logic.
+## 📦 Current Template Features
 
-2. **Commit Messages**  
-   - Keep your commit messages clear and concise.
-   - Start with a capital letter.
-   - Use present tense (e.g., "Add feature" instead of "Added feature").
+- Express.js server setup
+- Tailwind CSS configuration
+- Static asset management
+- Template rendering
+- Development server with hot reload
+- CSS watch mode
+- Environment variable configuration
+- Git ignore setup
+- Comprehensive project documentation
 
-3. **Pull Requests**  
-   - Ensure that all code is well-tested before submitting your pull request.
-   - Describe the changes you made and why.
-   - Link any relevant issues in your PR description.
+## 🛣️ Roadmap
 
-4. **License**  
-   By contributing, you agree that your contributions will be licensed under the same [LICENSE] as the rest of the project.
+- [ ] Add support for multiple frontend frameworks
+- [ ] Integrate additional CSS frameworks
+- [ ] Add Python web frameworks (Flask, Django)
+- [ ] Database integration templates
+- [ ] Authentication boilerplates
+- [ ] API documentation templates
+- [ ] Docker configuration
+- [ ] Testing setup templates
+- [ ] CI/CD pipeline templates
 
-## Development Setup
+## 🤝 Contributing
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/GitCoder052023/StackForge.git
-   cd StackForge
-   ```
+StackForge is completely open-source and we're actively looking for contributors! Whether you're fixing bugs, adding new features, improving documentation, or spreading the word - we'd love to have you as part of the StackForge community.
 
-2. Install dependencies (if applicable):
-   ```bash
-   pip install -r requirements.txt
-   ```
+### How to Contribute
 
-3. Run the project:
-   ```bash
-   python main.py
-   ```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Thank you for contributing! 💖
+Check out our [Contributing Guidelines](CONTRIBUTING.md) for more information.
+
+## 📝 Requirements
+
+- Python 3.7+
+- Node.js 14+
+- npm 6+
+
+## 🔧 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/GitCoder052023/StackForge.git
+
+# Navigate to the directory
+cd stackforge
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+## 💡 Usage
+
+```bash
+# Run the CLI tool
+python main.py
+```
+
+Follow the interactive prompts to configure your project:
+1. Enter your project name
+2. Choose output directory
+3. Select whether to use a src directory
+4. Wait for the setup to complete
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who have helped shape StackForge
+- Built with [questionary](https://github.com/tmbo/questionary) for the interactive CLI
+- Inspired by create-react-app and Vue CLI
 
 ---
 
-### Adjustments:
-- Replace `[Project Name]` with the name of your project.
-- Ensure any project-specific commands, such as how to run tests or install dependencies, are correct.
-- If your project uses a different branch naming convention or has specific testing tools, update that as well.
-
-Let me know if you'd like to modify anything specific for your project!
+Made with ❤️ by the StackForge community
