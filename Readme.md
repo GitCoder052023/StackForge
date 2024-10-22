@@ -104,7 +104,7 @@ Follow the interactive prompts to configure your project:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/GitCoder052023/StackForge/blob/main/Licence.md) file for details.
 
 ## 🙏 Acknowledgments
 
