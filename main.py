@@ -307,6 +307,36 @@ node_modules/
     with open(os.path.join(project_dir, '.gitignore'), 'w', encoding='utf-8') as f:
         f.write(gitignore_content)
 
+    # Ask about MIT license
+    add_license = questionary.confirm("Do you want to add an MIT license to your project?", default=True).ask()
+    
+    if add_license:
+        license_content = f"""MIT License
+
+Copyright (c) {time.strftime("%Y")} {project_name}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."""
+
+        with open(os.path.join(project_dir, 'LICENSE.md'), 'w', encoding='utf-8') as f:
+            f.write(license_content)
+
+
     # Create README.md
     readme_content = f"""# {project_name}
 
