@@ -105,22 +105,7 @@ export default {{
     <title>StackForge Setup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/static/CSS/output.css">
-    <style>
-        /* Animation for hovering buttons */
-        .hover-btn { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
-        /* Smooth motion for page elements */
-        .fade-in { opacity: 0; animation: fadeIn 1s forwards; }
-        @keyframes fadeIn { to { opacity: 1; } }
-        /* Icon bounce animation */
-        .bounce { animation: bounce 1.5s infinite; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        /* Section entry animation */
-        .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out forwards; }
-        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-        /* Install command hover effect */
-        .code-box:hover { background-color: #f9fafb; border-color: #e5e7eb; }
-    </style>
+    <link rel="stylesheet" href="/static/CSS/index.css">
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="px-4 lg:px-6 h-16 flex items-center fade-in">
@@ -231,6 +216,7 @@ export default {{
             <a class="text-xs hover:underline underline-offset-4 hover-btn" href="#">Privacy</a>
         </nav>
     </footer>
+    <script src="/static/JS/index.js"></script>
 </body>
 </html>"""
     with open(os.path.join(templates_dir, 'index.html'), 'w', encoding='utf-8') as f:
@@ -273,6 +259,103 @@ app.listen(port, () => {{
     css_path = os.path.join(static_dir, 'CSS', 'main.css')
     with open(css_path, 'w', encoding='utf-8') as f:
         f.write(main_css_content)
+
+    # Create index.css in CSS
+    index_css_content = """
+.hover-btn { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+.hover-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+
+
+.fade-in { opacity: 0; animation: fadeIn 1s forwards; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+
+.bounce { animation: bounce 1.5s infinite; }
+
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+
+.fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out forwards; }
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+
+.code-box:hover { background-color: #f9fafb; border-color: #e5e7eb; }
+"""
+    index_css_path = os.path.join(static_dir, 'CSS', 'index.css')
+    with open(index_css_path, 'w', encoding='utf-8') as f:
+        f.write(index_css_content)
+
+    # Create index.js in JS
+    index_js_content = """
+    // Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all elements with the 'fade-up' and 'fade-in' classes
+  const fadeUpElements = document.querySelectorAll(".fade-up");
+  const fadeInElements = document.querySelectorAll(".fade-in");
+
+  // Intersection Observer for fade-up animations
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
+  const handleFadeUp = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const fadeUpObserver = new IntersectionObserver(handleFadeUp, observerOptions);
+
+  fadeUpElements.forEach(element => {
+    element.classList.remove("visible");
+    fadeUpObserver.observe(element);
+  });
+
+  // Intersection Observer for fade-in animations
+  const handleFadeIn = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const fadeInObserver = new IntersectionObserver(handleFadeIn, observerOptions);
+
+  fadeInElements.forEach(element => {
+    element.classList.remove("visible");
+    fadeInObserver.observe(element);
+  });
+
+  // Copy npm install command to clipboard
+  const copyButton = document.querySelector(".code-box button");
+  copyButton.addEventListener("click", () => {
+    const codeText = document.querySelector(".code-box code").innerText;
+    navigator.clipboard.writeText(codeText)
+      .then(() => {
+        alert("Command copied to clipboard!");
+      })
+      .catch(err => {
+        console.error("Failed to copy command:", err);
+      });
+  });
+});
+
+    """
+    index_js_path = os.path.join(static_dir, 'JS', 'index.js')
+    with open(index_js_path, 'w', encoding='utf-8') as f:
+        f.write(index_js_content)
+
+
 
     # Update package.json with correct paths
     package_json_path = os.path.join(project_dir, 'package.json')
