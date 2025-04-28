@@ -44,18 +44,6 @@ Coming soon:
 - Git ignore setup
 - Comprehensive project documentation
 
-## 🛣️ Roadmap
-
-- [ ] Add support for multiple frontend frameworks
-- [ ] Integrate additional CSS frameworks
-- [ ] Add Python web frameworks (Flask, Django)
-- [ ] Database integration templates
-- [ ] Authentication boilerplates
-- [ ] API documentation templates
-- [ ] Docker configuration
-- [ ] Testing setup templates
-- [ ] CI/CD pipeline templates
-
 ## 🤝 Contributing
 
 StackForge is completely open-source and we're actively looking for contributors! Whether you're fixing bugs, adding new features, improving documentation, or spreading the word - we'd love to have you as part of the StackForge community.
