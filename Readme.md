@@ -7,7 +7,7 @@ StackForge is an innovative, open-source CLI tool designed to streamline the pro
 
 ## 🚧 Development Status
 
-**Note: StackForge is currently in active development (Alpha Stage)**
+**Note: StackForge is currently in development**
 
 Currently supported technologies:
 - Express.js
@@ -18,8 +18,6 @@ Coming soon:
 - Django
 - Bootstrap
 - Vanilla CSS
-- React.js
-- Vue.js
 - And many more!
 
 ## ✨ Features
